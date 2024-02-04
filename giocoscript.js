@@ -57,10 +57,11 @@ dashButton.addEventListener("click", function() {
 
   // Get the speed button reference
   var speedButton = document.getElementById("speedButton");
-  // Add an event listener to the speed button
+  // Add a click event listener to the button
   speedButton.addEventListener("click", function () {
-    increaseSpeed();
-  });
+      increaseSpeed();
+  }, false); 
+
 
   // Funzione per aprire il modulo di dialogo in sovraimpressione
   function openOverlay() {
@@ -88,18 +89,36 @@ dashButton.addEventListener("click", function() {
     }
   }
 });
+
 var speedCost = 2;
+
+// Get the reference to the element where you want to display the speed cost
+var speedCostElement = document.getElementById("speedCostElement");
+
+// Set the innerHTML of the element to display the speed cost
+speedCostElement.innerHTML = "x" + speedCost;
+
 function increaseSpeed() {
   if (score >= speedCost && player.speed <= 6) {
     console.log("Speed");
     player.speed += 0.5;
     score -= speedCost;
     speedCost += 2;
+    // Get the reference to the element where you want to display the speed cost
+    var speedCostElement = document.getElementById("speedCostElement");
+
+    // Set the innerHTML of the element to display the speed cost
+    speedCostElement.innerHTML = "x" + speedCost;
     updateGame();
   } else {
-    alert("Non hai abbastanza monete per migliorare la velocita!");
-  }
+    if(score < speedCost){
+      alert("Non hai abbastanza monete per migliorare la velocita!");
+    } else if(player.speed >= 6){
+      alert("Hai raggiunto il limite massimo di velocità!");
+    }  }
 }
+
+
 
 function setDashAbility() {
   if(score >= 8 && !canDash){
@@ -415,7 +434,7 @@ function generateRandomLevel() {
 
 // Inizializza il gioco
 function initGame() {
-  score = 1000;
+  score = 0;
   lives = 3;  
   player.x = 0;
   player.y = canvas.height - 64;
@@ -794,3 +813,90 @@ gameLoop();
 function openLink(url) {
   window.location.href = url;
 }
+
+const leftArrowButton = document.getElementById('leftArrow');
+const rightArrowButton = document.getElementById('rightArrow');
+//const leftArrowButton = document.getElementById('leftArrow');
+let moveLeftInterval
+let moveRightInterval
+
+function movePlayerLeft() {
+  // Update player's x-coordinate for moving left
+  player.x -= player.speed - 1;
+}
+
+function movePlayerRight() {
+  // Update player's x-coordinate for moving right
+  player.x += player.speed - 1;
+}
+
+function handleLeftButtonPress() {
+  // Clear any existing moveRight interval
+  clearInterval(moveRightInterval);
+
+  // Start moving the player left immediately
+  movePlayerLeft();
+
+  // Set an interval for moving the player left
+  moveLeftInterval = setInterval(movePlayerLeft, 1); // Adjust the interval as needed
+}
+
+function handleLeftButtonRelease() {
+  // Clear the moveLeft interval when the button is released
+  clearInterval(moveLeftInterval);
+}
+
+function handleRightButtonPress() {
+  // Clear any existing moveLeft interval
+  clearInterval(moveLeftInterval);
+
+  // Start moving the player right immediately
+  movePlayerRight();
+
+  // Set an interval for moving the player right
+  moveRightInterval = setInterval(movePlayerRight, 1); // Adjust the interval as needed
+}
+
+function handleRightButtonRelease() {
+  // Clear the moveRight interval when the button is released
+  clearInterval(moveRightInterval);
+}
+
+leftArrowButton.addEventListener('mousedown', handleLeftButtonPress);
+leftArrowButton.addEventListener('mouseup', handleLeftButtonRelease);
+leftArrowButton.addEventListener('touchstart', handleLeftButtonPress);
+leftArrowButton.addEventListener('touchend', handleLeftButtonRelease);
+
+rightArrowButton.addEventListener('mousedown', handleRightButtonPress);
+rightArrowButton.addEventListener('mouseup', handleRightButtonRelease);
+rightArrowButton.addEventListener('touchstart', handleRightButtonPress);
+rightArrowButton.addEventListener('touchend', handleRightButtonRelease);
+
+var jumpArrowButton = document.getElementById("jumpArrow");
+jumpArrowButton.addEventListener("click", function() {
+  jump();
+});
+
+function jump() {
+  if (player.canDoubleJump) {
+    player.velY = -jumpStrength;
+    player.canJump = false;
+    player.onGround = false;
+    jumpStartTime = new Date().getTime();
+    jumpDuration = 0;
+    isJumping = true;
+    player.jumps++;
+    if(player.jumps == 2){
+      player.canDoubleJump = false;
+      player.jumps = 0;
+    }
+  }
+}
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth <= 600) {
+    document.body.classList.add('phone-mode');
+  } else {
+    document.body.classList.remove('phone-mode');
+  }
+});

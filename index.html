@@ -57,10 +57,16 @@
             </p>
           </div>
 
-          <button class="speedButton">
-            <img src="images/speed-icon.png" alt="Speed">
-            <span>Speed</span>
-          </button>
+          <div class="speedOverlay">
+            <button id="speedButton"><img src="images\speed-icon.png" alt=""></button>
+            <img id="coinImage" src="images\PngItem_1352730.png">
+            <p class="info">
+              Speed
+            </p>
+            <p class="prezzo">
+              <div id="speedCostElement"></div>
+            </p>
+          </div>
 
           <div class="immunity">
             <button id="immunityButton"><img src="images\shield.png" alt=""></button>
@@ -84,7 +90,21 @@
         <img id="dashImage" src="images\Il mio progetto.png" alt="">
       </div>
       
+      <div class="arrows">
+        <button id="leftArrow" disabled><img src="images/left-arrow.png"></button>
+        <button id="rightArrow" disabled><img src="images/right-arrow.png"></button>
+        <button id="jumpArrow"><img src="images/jump-arrow.png"></button>
+      </div>
 
-    <script src="giocoscript.js"></script>zzz
+      <script>
+        // Enable arrow buttons only in phone mode
+        if (document.body.classList.contains('phone-mode')) {
+          document.getElementById('leftArrow').removeAttribute('disabled');
+          document.getElementById('rightArrow').removeAttribute('disabled');
+          document.getElementById('jumpArrow').removeAttribute('disabled');
+        }
+        </script>
+      
+    <script src="giocoscript.js"></script>
 </body>
 </html>

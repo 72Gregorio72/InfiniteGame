@@ -128,6 +128,13 @@ body {
   margin-top: -30px;
 }
 
+#speedCostElement{
+  display: flex;
+  font-size: 30px;
+  margin-left: 70px;
+  margin-top: -20px;
+}
+
 #life{
   display: flex;
   position: absolute;
@@ -285,7 +292,7 @@ body {
   left: 4px;
 }
 
-.speedButton{
+.speedOverlay{
   display: flex;
   position: absolute;
   right: 80px;
@@ -301,9 +308,65 @@ body {
   background-color: transparent;
 }
 
-.speedButton img{
-  width: 300px;
+.speedOverlay img{
+  width: 100px;
   height: 120px;
 }
 
-    
+#speedButton{
+  background-color: transparent;
+  border: transparent;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.control {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  padding: 10px;
+  outline: none;
+}
+
+.control:focus {
+  box-shadow: 0 0 3px 1px rgba(0, 122, 204, 0.5);
+}
+
+.control img {
+  height: 24px;
+  width: 24px;
+}
+
+.arrows button {
+  background-color: transparent;
+  border-radius: 20px;
+  margin-top: 500px;
+  margin-left: 100px;
+  width: 100px;
+  height: 100px;
+}
+
+.arrows {
+  display: none;
+}
+
+.arrows button img {
+  width: 100px;
+  height: 100px;
+}
+
+.arrows #jumpArrow{
+  margin-left: 450px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .arrows {
+    display: flex; /* or 'block', or any other appropriate value */
+  }
+}
+
