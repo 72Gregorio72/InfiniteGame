@@ -888,7 +888,7 @@ function jump() {
     player.jumps++;
     if(player.jumps == 2){
       player.canDoubleJump = false;
-      player.jumps = 0;
+      player.jumps = 0; 
     }
   }
 }
