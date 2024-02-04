@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Platformer 2D Game</title>
+    <link rel="stylesheet" type="text/css" href="giocostyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="home">
+      <button class="home" onclick="openLink('portfolio.html')"><img src="images\transparent-home-icon-house-icon-5d6f15d91c98f1.3250379215675611771171.png" alt=""></button>
+    </div>
+
+    <div class="container">
+      <div class="store">
+        <button id="storeButton"><img src="images\shop-image1000-removebg-preview.png" alt=""></button>
+      </div>
+
+      <canvas id="gameCanvas"></canvas> 
+
+    </div>
+
+    
+    <img id="heartImage" src="images\pixil-frame-0 (1).png" style="display: none;">
+    <img id="coinImage" src="images\PngItem_1352730.png" style="display: none;">
+    <img id="blockImage" src="images\Grass_Sprite.png" style="display: none;">
+    <img id="spikeImage" src="images\NicePng_spike-spiegel-png_2287658.png" style="display: none;">
+
+      <button id="startButton">Avvia Generazione Livello</button>
+
+      <!-- Modulo di dialogo nascosto -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <!-- Contenuto del modulo di dialogo -->
+          <h2>Store</h2>
+          <img class="immagineSfondo" src="images\pixil-frame-0 (4).png" alt="">
+          <div id="life">
+            <button id="lifeButton" onclick="buyLife()"><img id="heartImage" src="images\pixil-frame-0 (1).png"></button>
+            <img id="coinImage" src="images\PngItem_1352730.png">
+            <p class="info">
+              Vita Extra
+            </p>
+            <p class="prezzo">
+              x15
+            </p>
+          </div>
+
+          <div class="dash">
+            <button id="dashButton"><img src="images\Il mio progetto.png" alt=""></button>
+            <img id="coinImage" src="images\PngItem_1352730.png">
+            <p class="info">
+              Dash
+            </p>
+            <p class="prezzo">
+              x8
+            </p>
+          </div>
+
+          <button class="speedButton">
+            <img src="images/speed-icon.png" alt="Speed">
+            <span>Speed</span>
+          </button>
+
+          <div class="immunity">
+            <button id="immunityButton"><img src="images\shield.png" alt=""></button>
+            <img id="coinImage" src="images\PngItem_1352730.png">
+            <p class="info">
+              Immunita
+            </p>
+            <p class="prezzoImmunity">
+              x35
+            </p>
+          </div>
+
+          <button id="closeButton"><img src="images\NicePng_red-cross-mark-png_3625552.png" alt=""></button>
+        </div>
+      </div>
+      <div class="immunityLogo">
+        <img id="immunityImage" src="images\shield.png" alt="">
+      </div>
+
+      <div class="dashLogo">
+        <img id="dashImage" src="images\Il mio progetto.png" alt="">
+      </div>
+      
+
+    <script src="giocoscript.js"></script>zzz
+</body>
+</html>

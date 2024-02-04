@@ -1,0 +1,124 @@
+body {
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    background: linear-gradient(176deg, rgb(92, 92, 195), rgb(244, 41, 214), red, purple, pink);
+    background-size: 10000px;
+    animation: ciao 3s infinite alternate;    
+}
+
+header {
+    color: #fff;
+    width: 1000px;
+    margin-top: 50px;
+}
+
+h1 {
+    top: 10px;
+}
+
+.instagram img{
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    margin-left: 10px;
+}
+
+.instagram p{
+    margin-top: 10px;
+}
+
+.instagram{
+    display: flex;
+    align-items: center;
+    margin-left: 120px;
+}
+
+.email img{
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    margin-left: 480px;
+}
+
+.email p{
+    margin-top: 10px;
+    margin-left: 480px;
+}
+
+.email{
+    display: flex;
+    align-items: left;
+    margin-left: 120px;
+}
+
+.contatti{
+    display: flex;
+}
+
+.home{
+    background: fixed;
+    left: 1000px;
+    background: transparent;
+    border: transparent;
+}
+
+.home img{
+    width: 50px;
+    height: 50px;
+    margin-left:800px;
+}
+
+@keyframes ciao{
+    0%{
+        background-position: left;
+    }
+
+    100%{
+        background-position: top;
+    }
+}
+
+form {
+    
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 10px;
+    background: transparent;
+}
+form h1 {   
+    font-family: 'Times New Roman', Times, serif;
+    color: whitesmoke;
+}
+
+form input, form textarea, form button {
+    margin: 10px 0;
+    border: 2px solid #091126;
+    outline: none;
+    border-radius: 2rem;
+    padding: 20px;
+    font-size: 16px;
+    background-color: unset;
+    color: #fff;
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+form button {
+    background-color:rgb(2, 2, 2);
+    border: none;
+    width: 120px;
+    transition: 0.3s;
+}
+form button:hover {
+    background-color: rgb(248, 32, 86);
+}

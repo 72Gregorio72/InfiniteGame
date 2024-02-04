@@ -1,0 +1,286 @@
+body {
+    background-color: #222;
+    margin: 0;
+    overflow: hidden;
+}
+
+#gameCanvas {
+    display: block;
+    margin: 0 auto;
+    background: linear-gradient( white, blue);
+}
+
+#shop-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .item {
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  #shop-container {
+    display: none;
+  }
+  
+  #shop-container.visible {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .item {
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+  .home{
+    background: fixed;
+    left: 1000px;
+    background: transparent;
+    border: transparent;
+}
+
+.home img{
+    width: 50px;
+    height: 50px;
+    margin-left:1500px;
+}
+
+/* Stili per il modulo di dialogo */
+.modal {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.9); /* Colore bianco con trasparenza */
+}
+
+.modal-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 590px;
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 590px;
+}
+
+#coinImage{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin-top: 165px;
+  left: 35px;
+}
+
+.prezzoImmunity{
+  font-size: 30px;
+  margin-left: 35px;
+  margin-top: -20px;
+}
+
+.info{
+  display: flex;
+  font-size: 30px;
+  margin-top: -5px;
+  justify-content: center;
+}
+
+.prezzo{
+  display: flex;
+  font-size: 30px;
+  margin-left: 70px;
+  margin-top: -30px;
+}
+
+#life{
+  display: flex;
+  position: absolute;
+  left: 80px;
+  top: 80px;
+  flex-direction: column;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 150px;
+  height: 200px;
+}
+
+.immunityLogo{
+  margin-top: -770px;
+  margin-left: 0px;
+}
+
+.immunityLogo img{
+  width: 180px;
+  height: 60px;
+}
+
+.dashLogo{
+  margin-left: 140px;
+  margin-top: -60px;
+}
+
+.dashLogo img{
+  width: 60px;
+  height: 60px;
+}
+
+#storeButton{
+  position: absolute;
+  top: 120px;
+  width: 100px;
+  height: 70px;
+  background-color: transparent;
+  border-radius: 10px;
+  margin-left: -990px;
+  margin-top: 100px;
+}
+
+#storeButton:hover{
+  background-color: rgb(217, 217, 217);
+}
+
+#storeButton img{
+  width: 80px;
+  height: 80px;
+  margin-top: -8px;
+}
+
+.store{
+  top: 2000px;
+}
+
+#lifeButton{
+  background-color: transparent;
+  border: transparent;
+}
+
+#lifeButton img{
+  margin-top: 10px;
+  width: 120px;
+  height: 120px;
+}
+
+#dashButton{
+  background-color: transparent;
+  border: transparent;
+  border-radius: 10px;
+}
+
+.dash{
+  display: flex;
+  position: absolute;
+  right: 80px;
+  top: 80px;
+  flex-direction: column;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 10px;
+  width: 150px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.dash img{
+  margin-top: 10px;
+  width: 120px;
+  height: 120px;
+}
+
+#immunityButton{
+  background-color: transparent;
+  border: transparent;
+  border-radius: 10px;
+  
+}
+
+.immunity{
+  display: flex;
+  position: absolute;
+  left: 80px;
+  bottom: 50px;
+  flex-direction: column;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 10px;
+  width: 150px;
+  height: 200px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.immunity img{
+  width: 300px;
+  height: 120px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.immagineSfondo{
+  position: absolute;
+  top: -170px;
+  width: 1000px;
+  height: 1000px;
+  z-index: -10;
+}
+
+#closeButton{
+  position: absolute;
+  left: 700px;
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  border: transparent;
+}
+
+#closeButton img{
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+    

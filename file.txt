@@ -1,0 +1,38 @@
+// Aggiungi l'ascoltatore degli eventi per la pressione dei tasti
+document.addEventListener("keydown", keyDownHandler, false);
+document.addEventListener("keyup", keyUpHandler, false);
+
+// Funzioni per gestire gli eventi di pressione dei tasti
+function keyDownHandler(event) {
+    if (event.keyCode === 39) {
+        player.velX = player.speed;
+    } else if (event.keyCode === 37) {
+        player.velX = -player.speed;
+    }
+
+    if (event.keyCode === 32 && !player.jumping) {
+        jump();
+    }
+}
+
+function keyUpHandler(event) {
+    if (event.keyCode === 39 || event.keyCode === 37) {
+        player.velX = 0;
+    }
+    if (event.keyCode === 32) {
+        // Imposta player.jumping su false solo se il tasto della barra spaziatrice viene rilasciato
+        player.jumping = false;
+    }
+}
+
+
+
+
+for (var i = 0; i < currentPlaneBlocks.length; i++) {
+    var block = currentPlaneBlocks[i];
+    var randomWidth = Math.random() * 30 + 20; // Larghezza casuale tra 20 e 50
+    var randomX = Math.random() * (block.width - randomWidth) + block.x; // Posizione casuale all'interno del blocco
+    var randomY = block.y - randomWidth; // Sopra il blocco
+    var spike = { x: randomX, y: randomY, width: randomWidth, height: randomWidth };
+    currentPlaneSpikes.push(spike);
+  }

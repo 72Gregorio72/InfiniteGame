@@ -1,0 +1,202 @@
+body{
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  background: linear-gradient(176deg, rgb(92, 92, 195), rgb(244, 41, 214), red, purple, pink);
+  background-size: 10000px;
+  animation: ciao 3s infinite alternate; 
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.centered-text h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Stile per la didascalia dell'immagine */
+.image-caption {
+    text-align: center;
+    margin-top: 220px;
+    color: black;
+    background-color: #e9e2e280;
+    border-radius: 20px;
+  }
+  
+  .caption-bold {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .caption-normal {
+    font-size: 14px;
+    color: black;
+  }
+  
+
+/* Stile per il contenitore delle immagini */
+#immagini {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0vh;
+  left: 1000px; /* Modifica questa riga */
+}
+  
+
+#sidebar {
+    background-color: #5667B6;
+    width: 100px;
+    padding: 20px;
+    height: 500px;
+    opacity: 100%;
+    transition: transform 0.5s; /* Aggiunto per animare lo spostamento */
+    transform: translateX(-300px); /* Sposta inizialmente la colonna a sinistra fuori dallo schermo */
+    position: absolute; /* Aggiunto per posizionare la colonna */
+    top: -10px; /* Regola la distanza dal bordo superiore dello schermo */
+    left: 0px; /* Regola la distanza dal bordo sinistro dello schermo */
+    background: linear-gradient(176deg, rgb(92, 92, 195), rgb(244, 41, 214), red, purple, pink);
+    background-size: 1000000px;
+    animation: ciao 3s infinite alternate; 
+    border-radius: 10px;
+    position: fixed;
+    z-index: 5;
+    min-height: 170vh;
+}
+
+#sidebar.visible {
+    transform: translateX(0); /* Mostra la colonna a sinistra */
+}
+
+#sidebar button {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    opacity: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    border: transparent;
+    width: 100px;
+    background-color: transparent;
+    color: black;
+}
+
+#sidebar button:hover{
+  background-color: white;
+  color: black;
+}
+
+#sidebar button.menu-item {
+    background-color: transparent;
+    color: white;
+}
+
+#sidebar button.menu-item.hidden {
+    border: none;
+}
+
+
+#sidebar button.menu-item:hover {
+    background-color: white;
+    color: black;
+}
+
+#content {
+    position: relative; /* Aggiungi posizione relativa per posizionare correttamente l'immagine */
+}
+
+h1 {
+  text-align: center;
+  top: -100px;
+  color: black;
+}
+
+#toggleButton {
+  position: fixed;
+  top: 10px;
+  padding: 10px;
+  background-color: #B0A6A3;
+  color: #000;
+  font-size: 15px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.5s, left 0.5s; /* Aggiunto per animare lo spostamento */
+  transform: translateX(0px); /* Sposta inizialmente la freccia a sinistra fuori dallo schermo */
+  text-transform: capitalize;
+  width: 30px;
+  height: 30px;
+  transform-origin: center;
+  left: 10px; /* Imposta la distanza dalla colonna */
+
+}
+
+#toggleButton.rotated {
+  transform: translateX(0) rotate(180deg);
+  left: 170px; /* Imposta la distanza dalla colonna */
+}
+
+#toggleButton.arrow-icon {
+    background-color: transparent;
+    color: black;
+    z-index: 5;
+}
+
+#toggleButton.arrow-icon:hover {
+    background-color: white;
+    color: black;
+}
+
+#slider{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container img {
+  width:200px;
+  height: 200px;
+  border-radius: 10%;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.container{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#boxScritta{
+  padding: 10px;
+  max-width: 600px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+@keyframes ciao{
+  0%{
+      background-position: left;
+  }
+
+  100%{
+      background-position: top;
+  }
+}
